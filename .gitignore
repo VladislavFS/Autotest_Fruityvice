@@ -1,5 +1,5 @@
 /venv/
-/tests/logs/
+logs/
 .idea/
 
 # Created by https://www.toptal.com/developers/gitignore/api/pycharm
