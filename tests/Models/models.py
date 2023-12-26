@@ -10,6 +10,10 @@ class ResponseModel:
 class RegisterFruts:
     @staticmethod
     def random_body_fruts():
+        """
+
+        :return: Функция генерирует тело запроса с случайными данными на добавление фрукта в БД
+        """
         genus_r = ['Ianhedgea', 'Ianthopappus', 'Iberidella', 'Iberis', 'Ibervillea', 'Ibicella', 'Icacina', 'Icaria',
                    'Ichnanthus', 'Ichnocarpus', 'Ichthyothere', 'Ichtyoselmis', 'Icianthus', 'Icosinia', 'Icuria',
                    'Idahoa', 'Idertia', 'Idesia', 'Idiopappus', 'Idiospermum', 'Idiothamnus', 'Ifloga', 'Ignurbia',

@@ -6,13 +6,12 @@ class Client:
     @staticmethod
     def custom_req(method: str, url, **kwargs) -> requests.Response:
         """
-            Request method
-            method: method for the new Request object: GET, OPTIONS, HEAD, POST, PUT, PATCH, or DELETE. # noqa
-            url – URL for the new Request object.
-            **kwargs:
-                params – (optional) Dictionary, list of tuples or bytes to send in the query string for the Request. # noqa
-                json – (optional) A JSON serializable Python object to send in the body of the Request. # noqa
-                headers – (optional) Dictionary of HTTP Headers to send with the Request.
+        :param method: Метод HTTP запроса. Принимает значения: GET, OPTIONS, HEAD, POST, PUT, PATCH, или DELETE.
+        :param url: Адрес ресурса на который отправляеться запрос
+        :param kwargs: params – (Необязательный) Словарь, список кортежей или байтов для отправки в строке запроса.
+                       json – (Необязательный) Сериализуемый объект Python в формате JSON для отправки в теле запроса.
+                       headers – (Необязательный) Словарь HTTP-заголовков для отправки с запросом.
+        :return: Возврашает кастомный объект с атрибутами: status (Код ответа) и json(Тело ответа)
         """
         response = (requests.request(method, url, **kwargs))
         return ResponseModel(status=response.status_code, response=response.json())
