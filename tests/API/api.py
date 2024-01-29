@@ -9,7 +9,6 @@ class ApiTest:
     def __init__(self, path):
         self.host = 'https://www.fruityvice.com'
         self.path = path
-        self.client = Client()
 
     def fruts_get(self, valid_schema: dict, **kwargs):
         """
@@ -18,7 +17,7 @@ class ApiTest:
         :return: Возврашает кастомный объект с атрибутами: status (Код ответа) и json(Тело ответа)
         """
         # Получаем кастомный объект с кодом и телом ответа
-        response = self.client.custom_req(method='GET', url=f'{self.host}{self.path}', **kwargs)
+        response = Client.custom_req(method='GET', url=f'{self.host}{self.path}', **kwargs)
         validate(instance=response.json, schema=valid_schema)  # Производим валидацию тела ответа с переданной схемой
         logger.info(response.json)
         return response
@@ -29,6 +28,6 @@ class ApiTest:
         :return: Возврашает кастомный объект с атрибутами: status (Код ответа) и json(Тело ответа)
         """
         # Получаем кастомный объект с кодом и телом ответа
-        response = self.client.custom_req(method='PUT', url=f'{self.host}{self.path}', json=body)
+        response = Client.custom_req(method='PUT', url=f'{self.host}{self.path}', json=body)
         logger.info(response.json)
         return response
