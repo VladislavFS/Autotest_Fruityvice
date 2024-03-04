@@ -1,0 +1,29 @@
+name: Automated test
+
+on:
+  workflow_dispatch:
+    inputs:
+      deployment_target:
+        description: Choose target
+        required: true
+        default:
+        type: choice
+        options:
+          - all tests
+
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: action/checkout@v4
+      - name: setup Python
+        uses: action/setup-python@v4
+        with:
+          python-version: '3.12'
+      - name: install dependencies
+        run: pip install -r requirements.txt
+      - name: run tests
+        run: python -m pytest [...]
