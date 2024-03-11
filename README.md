@@ -11,6 +11,7 @@ pip install -r requirements.txt
 ```sh
 python -m pytest [...]
 ```
+[Allure отчет](https://vladislavfs.github.io/Autotest_Fruityvice/)
 
 ## Структура проекта 
 - API - классы для взаимодействия с api
